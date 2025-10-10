@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         if(Input.GetButtonDown("Jump") && isGrounded())
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
         }
         /*if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
     }
 
     private bool isGrounded()
