@@ -38,13 +38,13 @@ public class HueChange : MonoBehaviour
         if(!isRed)
         {
             Debug.Log("red ON");
-            cm.redOutRedIn.value = 100f;
+            cm.redOutRedIn.value = 90f;
             isRed = true;
         }
         else
         {
             Debug.Log("red OFF");
-            cm.redOutRedIn.value = 0f;
+            cm.redOutRedIn.value = 10f;
             isRed = false;
         }
     }
@@ -54,13 +54,13 @@ public class HueChange : MonoBehaviour
         if(!isGreen)
         {
             Debug.Log("green ON");
-            cm.greenOutRedIn.value = 100f;
+            cm.greenOutRedIn.value = 90f;
             isGreen = true;
         }
         else
         {
             Debug.Log("green OFF");
-            cm.greenOutRedIn.value = 0f;
+            cm.greenOutRedIn.value = 10f;
             isGreen = false;
         }
     }
@@ -70,13 +70,13 @@ public class HueChange : MonoBehaviour
         if(!isBlue)
         {
             Debug.Log("blue ON");
-            cm.blueOutRedIn.value = 100f;
+            cm.blueOutRedIn.value = 90f;
             isBlue = true;
         }
         else
         {
             Debug.Log("blue OFF");
-            cm.blueOutRedIn.value = 0f;
+            cm.blueOutRedIn.value = 10f;
             isBlue = false;
         }
     }
