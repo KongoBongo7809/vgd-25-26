@@ -16,6 +16,7 @@ public class ColorChange : MonoBehaviour
     private bool isBlue = false;
 
     private Color currentColor;
+    private Color targetColor;
     private float elapsed;
     public float speed;
 
@@ -32,9 +33,54 @@ public class ColorChange : MonoBehaviour
 
         vol.profile.TryGet(out ca);
         currentColor = ca.colorFilter.value;
+        targetColor = currentColor;
     }
 
     void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && !isRed)
+        {
+            Debug.Log("Red");
+            currentColor = ca.colorFilter.value;
+            targetColor = RED;
+            elapsed = 0f;
+            isRed = true;
+            isGreen = false;
+            isBlue = false;
+        }
+        if (Input.GetKeyDown(KeyCode.G) && !isGreen)
+        {
+            Debug.Log("Green");
+            currentColor = ca.colorFilter.value;
+            targetColor = GREEN;
+            elapsed = 0f;
+            isGreen = true;
+            isRed = false;
+            isBlue = false;
+        }
+        if (Input.GetKeyDown(KeyCode.B) && !isBlue)
+        {
+            Debug.Log("Blue");
+            currentColor = ca.colorFilter.value;
+            targetColor = BLUE;
+            elapsed = 0f;
+            isBlue = true;
+            isRed = false;
+            isGreen = false;
+        }
+
+        elapsed += Time.deltaTime / speed;
+        ca.colorFilter.value = Color.Lerp(currentColor, targetColor, elapsed);
+        /*if (elapsed >= 1f)
+        {
+            elapsed = 0f;
+            currentIndex = targetIndex;
+            targetIndex++;
+            if (targetIndex == colors.Length) { targetIndex = 0; }
+        }*/
+    }
+
+    /*void Update()
     {
         elapsed += Time.deltaTime / speed;
 
@@ -48,7 +94,7 @@ public class ColorChange : MonoBehaviour
                 ca.colorFilter.value = newColor;
                 //ca.colorFilter.value = Color.Lerp(currentColor, new Color(255f/255f, 128f/255f, 128f/255f, 1f), elapsed);
                 //Color newColor = Color.Lerp(currentColor, new Color(255f/255f, 128f/255f, 128f/255f, 1f), elapsed);
-                if(elapsed >= 1f) { return; }
+                //if(elapsed >= 1f) { return; }
                 //ca.colorFilter.value = newColor;
 
                 
@@ -68,7 +114,7 @@ public class ColorChange : MonoBehaviour
                 Color newColor = Color.Lerp(currentColor, GREEN, elapsed);
                 ca.colorFilter.value = newColor;
                 //Color newColor = Color.Lerp(currentColor, new Color(128f/255f, 255f/255f, 128f/255f, 1f), elapsed);
-                if(elapsed >= 1f) { return; }
+                //if(elapsed >= 1f) { return; }
                 //ca.colorFilter.value = newColor;                
             }
 
@@ -86,7 +132,7 @@ public class ColorChange : MonoBehaviour
                 Color newColor = Color.Lerp(currentColor, BLUE, elapsed);
                 ca.colorFilter.value = newColor;
                 //Color newColor = Color.Lerp(currentColor, new Color(128f/255f, 128f/255f, 255f/255f, 1f), elapsed);
-                if(elapsed >= 1f) { return; }
+                //if(elapsed >= 1f) { return; }
                 //ca.colorFilter.value = newColor;
 
                 
