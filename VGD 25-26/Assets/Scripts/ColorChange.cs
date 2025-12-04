@@ -11,17 +11,24 @@ public class ColorChange : MonoBehaviour
 
     public Volume vol;
     private ColorAdjustments ca;
-    private bool isRed = false;
+    private bool isRed = true;
     private bool isGreen = false;
     private bool isBlue = false;
 
     private Color currentColor;
-    private float elasped;
     private float elapsed;
     public float speed;
 
+    private Color RED;
+    private Color GREEN;
+    private Color BLUE;
+
     void Start()
     {
+        //Define constants
+        RED = new Color(255f/255f, 128f/255f, 128f/255f, 1f);
+        GREEN = new Color(128f/255f, 255f/255f, 128f/255f, 1f);
+        BLUE = new Color(128f/255f, 128f/255f, 255f/255f, 1f);
 
         vol.profile.TryGet(out ca);
         currentColor = ca.colorFilter.value;
@@ -29,55 +36,66 @@ public class ColorChange : MonoBehaviour
 
     void Update()
     {
-        speed += Time.deltaTime;
+        elapsed += Time.deltaTime / speed;
 
         if(Input.GetKeyDown(KeyCode.R))
         {
             if(!isRed)
             {
-                elapsed += Time.deltaTime / speed;
+                elapsed = 0;
                 Debug.Log("red");
-                Color newColor = Color.Lerp(currentColor, new Color(255f/255f, 128f/255f, 128f/255f, 1f), elapsed);
-                if(elapsed >= 1f) { elapsed = 0f; }
+                Color newColor = Color.Lerp(currentColor, RED, elapsed);
                 ca.colorFilter.value = newColor;
-                currentColor = new Color(255f/255f, 128f/255f, 128f/255f, 1f);
+                //ca.colorFilter.value = Color.Lerp(currentColor, new Color(255f/255f, 128f/255f, 128f/255f, 1f), elapsed);
+                //Color newColor = Color.Lerp(currentColor, new Color(255f/255f, 128f/255f, 128f/255f, 1f), elapsed);
+                if(elapsed >= 1f) { return; }
+                //ca.colorFilter.value = newColor;
 
-                isRed = true;
-                isGreen = false;
-                isBlue = false;
+                
             }
+
+            isRed = true;
+            isGreen = false;
+            isBlue = false;
+            currentColor = RED;
         }
         if(Input.GetKeyDown(KeyCode.G))
         {
             if(!isGreen)
             {
-                elapsed += Time.deltaTime / speed;
+                elapsed = 0;
                 Debug.Log("green");
-                Color newColor = Color.Lerp(currentColor, new Color(128f/255f, 255f/255f, 128f/255f, 1f), speed);
-                if(elapsed >= 1f) { elapsed = 0f; }
+                Color newColor = Color.Lerp(currentColor, GREEN, elapsed);
                 ca.colorFilter.value = newColor;
-                currentColor = new Color(128f/255f, 255f/255f, 128f/255f, 1f);
-
-                isRed = false;
-                isGreen = true;
-                isBlue = false;
+                //Color newColor = Color.Lerp(currentColor, new Color(128f/255f, 255f/255f, 128f/255f, 1f), elapsed);
+                if(elapsed >= 1f) { return; }
+                //ca.colorFilter.value = newColor;                
             }
+
+            isRed = false;
+            isGreen = true;
+            isBlue = false;
+            currentColor = GREEN;
         }
         if(Input.GetKeyDown(KeyCode.B))
         {
             if(!isBlue)
             {
-                elapsed += Time.deltaTime / speed;
+                elapsed = 0;
                 Debug.Log("blue");
-                Color newColor = Color.Lerp(currentColor, new Color(128f/255f, 128f/255f, 255f/255f, 1f), speed);
-                if(elapsed >= 1f) { elapsed = 0f; }
+                Color newColor = Color.Lerp(currentColor, BLUE, elapsed);
                 ca.colorFilter.value = newColor;
-                currentColor = new Color(128f/255f, 128f/255f, 255f/255f, 1f);
+                //Color newColor = Color.Lerp(currentColor, new Color(128f/255f, 128f/255f, 255f/255f, 1f), elapsed);
+                if(elapsed >= 1f) { return; }
+                //ca.colorFilter.value = newColor;
 
-                isRed = false;
-                isGreen = false;
-                isBlue = true;
+                
             }
+
+            isRed = false;
+            isGreen = false;
+            isBlue = true;
+            currentColor = BLUE; 
         }
     }
 
