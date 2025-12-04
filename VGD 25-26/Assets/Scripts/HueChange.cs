@@ -5,7 +5,81 @@ using UnityEngine.Rendering.Universal;
 
 public class HueChange : MonoBehaviour
 {
+    [SerializeField] layerMask redLayer;
+    [SerializeField] layerMask greenLayer;
+    [SerializeField] layerMask blueLayer
+
     [SerializeField] Volume vol;
+    private ColorAdjustments ca;
+    private bool isRed = false;
+    private bool isGreen = false;
+    private bool isBlue = false;
+
+    private Color currentColor;
+    public float speed = 1f;
+
+    void Start()
+    {
+        vol.profile.TryGet(out ca);
+        currentColor = ca.ColorAdjustments.colorFilter.value;
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.B))
+        {
+            changeRed();
+        }
+        if(Input.GetKeyDown(KeyCode.N))
+        {
+            changeGreen();
+        }
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            changeBlue();
+        }
+    }
+
+    public void changeRed()
+    {
+        if(!isRed)
+        {
+            ca.colorFilter.value = Color.Lerp(currentColor, new Color(255f, 128f, 128f, 1f), Time.deltaTime / speed)
+            currentColor = new Color(255f, 128f, 128f, 1f);
+
+            isRed = true;
+            isGreen = false;
+            isBlue = false;
+        }
+    }
+
+    public void changeGreen()
+    {
+        if(!isGreen)
+        {
+            ca.colorFilter.value = Color.Lerp(currentColor, new Color(255f, 128f, 128f, 1f), Time.deltaTime / speed)
+            currentColor = new Color(255f, 128f, 128f, 1f);
+
+            isRed = false;
+            isGreen = true;
+            isBlue = false;
+        }
+    }
+
+    public void changeBlue()
+    {
+        if(!isBlue)
+        {
+            ca.colorFilter.value = Color.Lerp(currentColor, new Color(255f, 128f, 128f, 1f), Time.deltaTime / speed)
+            currentColor = new Color(255f, 128f, 128f, 1f);
+
+            isRed = false;
+            isGreen = false;
+            isBlue = true;
+        }
+    }
+
+    /*[SerializeField] Volume vol;
     private ChannelMixer cm;
     private bool isRed = false;
     private bool isGreen = false;
@@ -79,5 +153,5 @@ public class HueChange : MonoBehaviour
             cm.blueOutRedIn.value = 10f;
             isBlue = false;
         }
-    }
+    }*/
 }
