@@ -92,12 +92,16 @@ public class ColorChange : MonoBehaviour
         {
             if(on)
             {
-                gameObjects[i].GetComponent<SpriteRenderer>().color.a = (255f/255f);
+                Color gameObjectColor = gameObjects[i].GetComponent<SpriteRenderer>().color;
+                gameObjectColor.a = (255f/255f);
+                gameObjects[i].GetComponent<SpriteRenderer>().color = gameObjectColor;
                 gameObjects[i].GetComponent<BoxCollider2D>().enabled = true;
             }
             else
             {
-                gameObjects[i].GetComponent<SpriteRenderer>().color.a = (50f/255f);
+                Color gameObjectColor = gameObjects[i].GetComponent<SpriteRenderer>().color;
+                gameObjectColor.a = (50f/255f);
+                gameObjects[i].GetComponent<SpriteRenderer>().color = gameObjectColor;
                 gameObjects[i].GetComponent<BoxCollider2D>().enabled = false;
             }
         }
