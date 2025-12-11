@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 71d2184abfd816d4b8828a61270e1dcd
+guid: 8466b68e3ccc3144596e53d3c82142ab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4353517923836544660
-    second: pixil-layer-2_0
+      213: 4821518441647153447
+    second: pixil-layer-4_0
   - first:
-      213: -4804736224113691506
-    second: pixil-layer-2_1
+      213: -5106613772899771464
+    second: pixil-layer-4_1
   - first:
-      213: 3243179943868695799
-    second: pixil-layer-2_2
+      213: -8411581748482414756
+    second: pixil-layer-4_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixil-layer-2_0
+      name: pixil-layer-4_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 7
         y: 0
-        width: 17
-        height: 51
+        width: 20
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 496c29d5c7dca6c30800000000000000
-      internalID: 4353517923836544660
+      spriteID: 721af582a7979e240800000000000000
+      internalID: 4821518441647153447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-layer-2_1
+      name: pixil-layer-4_1
       rect:
         serializedVersion: 2
-        x: 17
+        x: 52
         y: 0
-        width: 17
-        height: 54
+        width: 20
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e84704a5cd5225db0800000000000000
-      internalID: -4804736224113691506
+      spriteID: 8bb113d54d9a129b0800000000000000
+      internalID: -5106613772899771464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-layer-2_2
+      name: pixil-layer-4_2
       rect:
         serializedVersion: 2
-        x: 58
+        x: 75
         y: 0
-        width: 26
-        height: 70
+        width: 20
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,8 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7f407f0d9f6120d20800000000000000
-      internalID: 3243179943868695799
+      spriteID: c57eb8a57fe044b80800000000000000
+      internalID: -8411581748482414756
       vertices: []
       indices: 
       edges: []
@@ -198,9 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pixil-layer-2_0: 4353517923836544660
-      pixil-layer-2_1: -4804736224113691506
-      pixil-layer-2_2: 3243179943868695799
+      pixil-layer-4_0: 4821518441647153447
+      pixil-layer-4_1: -5106613772899771464
+      pixil-layer-4_2: -8411581748482414756
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
