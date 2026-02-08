@@ -9,13 +9,16 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 8a2aa719f9c57034d9c02731f93073b9
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: e0b839834531d634691c0b35c9c995ef
+    path: Assets/Scenes/Cutscene.unity
+    guid: a7cfd1b149680d740bbe3d6ced4d9a56
   - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: a6bce04136f26c744a45bd78c52e2b35
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: dd4e6ebde3f73ed40b9b0d309259e3c7
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: e0b839834531d634691c0b35c9c995ef
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

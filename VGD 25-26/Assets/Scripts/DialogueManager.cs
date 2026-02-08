@@ -56,6 +56,6 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("End of conversation");
-        FindObjectOfType<SceneManagement>().LoadNextLevel();
+        //FindObjectOfType<SceneManagement>().LoadNextLevel();
     }
 }
