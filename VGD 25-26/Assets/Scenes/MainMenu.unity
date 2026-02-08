@@ -119,6 +119,93 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &373606489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 373606491}
+  - component: {fileID: 373606490}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &373606490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373606489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bdc7702cc5c114081a9c3e98c11167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  sounds:
+  - name: Attack
+    clip: {fileID: 8300000, guid: 603b8d329cbf5ab46a98d6977099b062, type: 3}
+    volume: 1
+    pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Dialogue
+    clip: {fileID: 8300000, guid: 332f618e7d2da874c9c1d9de5fb0c799, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Dimension
+    clip: {fileID: 8300000, guid: 1851c439dfb6c834481a71f448d8293a, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Lock
+    clip: {fileID: 8300000, guid: 773c8e324e16c86449b36cadac2f2870, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Monster Growl
+    clip: {fileID: 8300000, guid: 97962fd354bbc034ba9cfda808fe9d9c, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Run
+    clip: {fileID: 8300000, guid: d3a5a3d7fce4911498c50e5cc58d0330, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Main Theme
+    clip: {fileID: 8300000, guid: d3a5a3d7fce4911498c50e5cc58d0330, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &373606491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373606489}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.74245, y: -0.46601, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &569184077
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,10 +831,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.16227607
+    x: -0.13569683
     y: 0
-    width: 0.6743941
-    height: 1
+    width: 0.78239614
+    height: 0.93478256
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -1168,3 +1255,4 @@ SceneRoots:
   - {fileID: 1503244287}
   - {fileID: 1242098561}
   - {fileID: 1645146966}
+  - {fileID: 373606491}
