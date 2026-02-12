@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class RGBManager : MonoBehaviour
 {
@@ -14,10 +15,10 @@ public class RGBManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        vol = FindFirstObjectOfType<Volume>();
+        vol = FindAnyObjectByType<Volume>();
         vol.profile.TryGet(out ca);
 
-        for(int i = 0; i < scenesWithRGB.length; i++)
+        for(int i = 0; i < scenesWithRGB.Length; i++)
         {
             if(i == (SceneManager.GetActiveScene().buildIndex + 1))
             {

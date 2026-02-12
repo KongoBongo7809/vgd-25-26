@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
+    private float vertical;
     public float speed = 4f;
     public float jumpHeight = 16f;
     private bool isFacingRight = true;
@@ -12,12 +13,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    public Animator animator;
+
+    bool isGroundedLastFrame = false;
 
     // Update is called once per frame
     void Update()
     {
+        //Animation
+        animator.SetBool("onGround", isGroundedLastFrame);
+        animator.SetBool("isRunning", (Mathf.Abs(horizontal) > 0.01));
+
         //Horizontal Movement
         horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
         if(Input.GetButtonDown("Jump") && isGrounded())
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
@@ -26,7 +35,8 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight*0.5f);
         }*/
-        Flip();       
+        Flip();
+        isGroundedLastFrame = isGrounded();
     }
 
     private void FixedUpdate()

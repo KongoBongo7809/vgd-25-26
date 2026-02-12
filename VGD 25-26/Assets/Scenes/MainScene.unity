@@ -693,7 +693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Parallax
   cam: {fileID: 607937485}
-  parallaxEffect: 1
+  parallaxEffect: 0.5
 --- !u!1 &447817492
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,7 +937,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a89ba62018004b84b95be7f95da3b8e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1055,7 +1055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Parallax
   cam: {fileID: 607937485}
-  parallaxEffect: 0.25
+  parallaxEffect: 0.2
 --- !u!1 &607937485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,7 +1198,7 @@ Camera:
     x: 0.07884362
     y: 0
     width: 0.84099865
-    height: 0.99999994
+    height: 1.0004675
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -1658,7 +1658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Parallax
   cam: {fileID: 607937485}
-  parallaxEffect: 0.7
+  parallaxEffect: 0.4
 --- !u!1 &917275853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,6 +1925,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 960
+  animator: {fileID: 509983838}
 --- !u!61 &941349513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1959,7 +1960,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0625, y: 0.625}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1969,7 +1970,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.75, y: 1.5}
   m_EdgeRadius: 0
 --- !u!50 &941349514
 Rigidbody2D:
@@ -2007,7 +2008,7 @@ Transform:
   m_GameObject: {fileID: 941349511}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04, y: 1.85, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3033,7 +3034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Parallax
   cam: {fileID: 607937485}
-  parallaxEffect: 0.15
+  parallaxEffect: 0.1
 --- !u!1 &1756323599
 GameObject:
   m_ObjectHideFlags: 0
@@ -3219,7 +3220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Parallax
   cam: {fileID: 607937485}
-  parallaxEffect: 0.5
+  parallaxEffect: 0.3
 --- !u!1 &2049660284
 GameObject:
   m_ObjectHideFlags: 0
