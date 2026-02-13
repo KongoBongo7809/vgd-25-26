@@ -96,7 +96,7 @@ public class PlayerCombat : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth((int)currentHealth);
-        animator.SetTrigger("Hurt");
+        animator.SetTrigger("isHurt");
         FindObjectOfType<AudioManager>().Play("Player Hurt");
         if ((int)currentHealth <= 0)
         {
@@ -108,7 +108,7 @@ public class PlayerCombat : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth((int)currentHealth);
-        animator.SetTrigger("Hurt");
+        animator.SetTrigger("isHurt");
         FindAnyObjectByType<AudioManager>().Play("Player Hurt");
         if ((int)currentHealth <= 0)
         {

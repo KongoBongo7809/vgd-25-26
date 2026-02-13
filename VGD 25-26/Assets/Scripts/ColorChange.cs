@@ -1,109 +1,239 @@
 using UnityEngine;
-using System.Collections;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
 public class ColorChange : MonoBehaviour
 {
-    public string redLayer;
-    public string greenLayer;
-    public string blueLayer;
+    [Header("Layer Tags (Red, Green, Blue)")]
+    [SerializeField] private string redLayer;
+    [SerializeField] private string greenLayer;
+    [SerializeField] private string blueLayer;
 
-    public Volume vol;
-    private ColorAdjustments ca;
-    private bool isRed = true;
-    private bool isGreen = false;
-    private bool isBlue = false;
+    [Header("References")]
+    [SerializeField] private Volume volume;
+    [SerializeField] private RectTransform wheelVisual;
 
-    private Color currentColor;
+    [Header("Settings")]
+    [SerializeField] private float rotationSpeed = 360f;
+    [SerializeField] private float colorLerpSpeed = 1f;
+    [SerializeField] private float hybridDuration = 2f;
+
+    private ColorAdjustments colorAdjustments;
+
+    // 0 = Red, 1 = Green, 2 = Blue (counter-clockwise)
+    private int baseIndex = 0;
+
+    private bool isHybrid = false;
+    private int hybridDirection; // -1 left, +1 right
+    private float hybridTimer;
+
+    private float currentAngle;
+    private float targetAngle;
+
+    private float colorLerp;
+    private Color startColor;
     private Color targetColor;
-    private float elapsed;
-    public float speed;
 
-    private Color RED;
-    private Color GREEN;
-    private Color BLUE;
+    private readonly Color[] colors =
+    {
+        new Color(1f, 0.5f, 0.5f, 1f), // Red
+        new Color(0.5f, 1f, 0.5f, 1f), // Green
+        new Color(0.5f, 0.5f, 1f, 1f)  // Blue
+    };
+
+    private string[] layerTags;
 
     void Start()
     {
-        //Define constants
-        RED = new Color(255f/255f, 128f/255f, 128f/255f, 1f);
-        GREEN = new Color(128f/255f, 255f/255f, 128f/255f, 1f);
-        BLUE = new Color(128f/255f, 128f/255f, 255f/255f, 1f);
+        if (volume == null)
+        {
+            Debug.LogWarning($"[{nameof(ColorChange)}] volume reference is null.");
+        }
+        else if (!volume.profile.TryGet(out colorAdjustments))
+        {
+            Debug.LogWarning($"[{nameof(ColorChange)}] Volume profile has no ColorAdjustments.");
+        }
 
-        vol.profile.TryGet(out ca);
-        currentColor = ca.colorFilter.value;
-        targetColor = currentColor;
+        layerTags = new string[] { redLayer, greenLayer, blueLayer };
+
+        currentAngle = wheelVisual != null ? wheelVisual.eulerAngles.z : 0f;
+        targetAngle = AngleForIndex(baseIndex);
+
+        ApplySingleState(baseIndex);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && !isRed)
-        {
-            currentColor = ca.colorFilter.value;
-            targetColor = RED;
-            elapsed = 0f;
+        bool shift = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
 
-            isRed = true;
-            isGreen = false;
-            isBlue = false;
+        if (Input.GetKeyDown(KeyCode.Q))
+            HandleInput(-1, shift);
 
-            ChangeActive(redLayer, true);
-            ChangeActive(greenLayer, false);
-            ChangeActive(blueLayer, false);
-        }
-        if (Input.GetKeyDown(KeyCode.G) && !isGreen)
-        {
-            currentColor = ca.colorFilter.value;
-            targetColor = GREEN;
-            elapsed = 0f;
+        if (Input.GetKeyDown(KeyCode.E))
+            HandleInput(+1, shift);
 
-            isGreen = true;
-            isRed = false;
-            isBlue = false;
-
-            ChangeActive(redLayer, false);
-            ChangeActive(greenLayer, true);
-            ChangeActive(blueLayer, false);
-        }
-        if (Input.GetKeyDown(KeyCode.B) && !isBlue)
-        {
-            currentColor = ca.colorFilter.value;
-            targetColor = BLUE;
-            elapsed = 0f;
-
-            isBlue = true;
-            isRed = false;
-            isGreen = false;
-
-            ChangeActive(redLayer, false);
-            ChangeActive(greenLayer, false);
-            ChangeActive(blueLayer, true);
-        }
-
-        elapsed += Time.deltaTime / speed;
-        ca.colorFilter.value = Color.Lerp(currentColor, targetColor, elapsed);
+        UpdateHybridTimer();
+        UpdateColor();
+        UpdateRotation();
     }
 
-    void ChangeActive(string tag, bool on)
+    void HandleInput(int direction, bool shiftHeld)
     {
-        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(tag);
-        for (int i = 0; i < gameObjects.Length; i++)
+        if (isHybrid)
         {
-            if(on)
+            CommitFromHybrid(direction);
+            return;
+        }
+
+        if (shiftHeld)
+            StartHybrid(direction);
+        else
+            FullSwitch(direction);
+    }
+
+    void FullSwitch(int direction)
+    {
+        baseIndex = Wrap(baseIndex + direction);
+        targetAngle = AngleForIndex(baseIndex);
+        ApplySingleState(baseIndex);
+    }
+
+    void StartHybrid(int direction)
+    {
+        isHybrid = true;
+        hybridDirection = direction;
+        hybridTimer = hybridDuration;
+
+        int neighbor = Wrap(baseIndex + direction);
+
+        float aAng = AngleForIndex(baseIndex);
+        float bAng = AngleForIndex(neighbor);
+        targetAngle = ShortestMidpoint(aAng, bAng);
+
+        ApplyHybridState(baseIndex, neighbor);
+    }
+
+    float ShortestMidpoint(float aAngle, float bAngle)
+    {
+        float delta = Mathf.DeltaAngle(aAngle, bAngle);
+        float mid = aAngle + delta * 0.5f;
+        return NormalizeAngle(mid);
+    }
+
+    float NormalizeAngle(float ang)
+    {
+        ang %= 360f;
+        if (ang < 0f) ang += 360f;
+        return ang;
+    }
+
+    void CommitFromHybrid(int inputDirection)
+    {
+        int neighbor = Wrap(baseIndex + hybridDirection);
+
+        if (inputDirection == hybridDirection)
+        {
+            baseIndex = neighbor;
+        }
+
+        isHybrid = false;
+        targetAngle = AngleForIndex(baseIndex);
+
+        ApplySingleState(baseIndex);
+    }
+
+    void UpdateHybridTimer()
+    {
+        if (!isHybrid) return;
+
+        hybridTimer -= Time.deltaTime;
+
+        if (hybridTimer <= 0f)
+        {
+            isHybrid = false;
+            targetAngle = AngleForIndex(baseIndex);
+            ApplySingleState(baseIndex);
+        }
+    }
+
+    void ApplySingleState(int index)
+    {
+        for (int i = 0; i < layerTags.Length; i++)
+            SetLayerActive(layerTags[i], i == index);
+
+        BeginColorTransition(colors[index]);
+    }
+
+    void ApplyHybridState(int a, int b)
+    {
+        for (int i = 0; i < layerTags.Length; i++)
+            SetLayerActive(layerTags[i], i == a || i == b);
+
+        BeginColorTransition((colors[a] + colors[b]) * 0.5f);
+    }
+
+    void BeginColorTransition(Color newTarget)
+    {
+        startColor = colorAdjustments != null ? colorAdjustments.colorFilter.value : Color.white;
+        targetColor = newTarget;
+        colorLerp = 0f;
+    }
+
+    void UpdateColor()
+    {
+        if (colorLerp < 1f && colorAdjustments != null)
+        {
+            colorLerp += Time.deltaTime * colorLerpSpeed;
+            colorLerp = Mathf.Clamp01(colorLerp);
+
+            colorAdjustments.colorFilter.value =
+                Color.Lerp(startColor, targetColor, colorLerp);
+        }
+    }
+
+    void UpdateRotation()
+    {
+        currentAngle = Mathf.MoveTowardsAngle(
+            currentAngle,
+            targetAngle,
+            rotationSpeed * Time.deltaTime
+        );
+
+        if (wheelVisual != null)
+            wheelVisual.rotation = Quaternion.Euler(0, 0, currentAngle);
+    }
+
+    float AngleForIndex(int index)
+    {
+        return index * -120f;
+    }
+
+    int Wrap(int value)
+    {
+        return (value + 3) % 3;
+    }
+
+    void SetLayerActive(string tag, bool active)
+    {
+        if (string.IsNullOrEmpty(tag))
+            return;
+
+        GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
+
+        foreach (var obj in objects)
+        {
+            var sr = obj.GetComponent<SpriteRenderer>();
+            var bc = obj.GetComponent<BoxCollider2D>();
+
+            if (sr != null)
             {
-                Color gameObjectColor = gameObjects[i].GetComponent<SpriteRenderer>().color;
-                gameObjectColor.a = (255f/255f);
-                gameObjects[i].GetComponent<SpriteRenderer>().color = gameObjectColor;
-                gameObjects[i].GetComponent<BoxCollider2D>().enabled = true;
+                Color c = sr.color;
+                c.a = active ? 1f : 0.2f;
+                sr.color = c;
             }
-            else
-            {
-                Color gameObjectColor = gameObjects[i].GetComponent<SpriteRenderer>().color;
-                gameObjectColor.a = (50f/255f);
-                gameObjects[i].GetComponent<SpriteRenderer>().color = gameObjectColor;
-                gameObjects[i].GetComponent<BoxCollider2D>().enabled = false;
-            }
+
+            if (bc != null)
+                bc.enabled = active;
         }
     }
 }
