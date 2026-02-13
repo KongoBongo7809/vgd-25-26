@@ -215,15 +215,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: -0.1380597
+    x: 0.12790698
     y: 0
-    width: 0.7960199
-    height: 0.95132744
+    width: 0.74418604
+    height: 0.99999994
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 4.171875
+  orthographic size: 3.78125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 1781307047}
   - component: {fileID: 1781307046}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -540,7 +540,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1, y: 0}
+  m_SizeDelta: {x: -60, y: -59.999992}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1781307046
 MonoBehaviour:
@@ -593,7 +593,7 @@ GameObject:
   - component: {fileID: 1803105513}
   - component: {fileID: 1803105512}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Home Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -615,7 +615,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -268.8, y: 108.2}
+  m_AnchoredPosition: {x: -235, y: 58}
   m_SizeDelta: {x: 161.6116, y: 134.1303}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1803105512
@@ -713,7 +713,7 @@ GameObject:
   - component: {fileID: 1893977377}
   - component: {fileID: 1893977376}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: City Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -735,7 +735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.1, y: 6.9}
+  m_AnchoredPosition: {x: 8, y: -10}
   m_SizeDelta: {x: 161.6116, y: 134.1303}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893977376
@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 2005846873}
   - component: {fileID: 2005846872}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Dojo Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -855,7 +855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 275, y: 38.1}
+  m_AnchoredPosition: {x: 257, y: 28}
   m_SizeDelta: {x: 161.6116, y: 134.1303}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2005846872
@@ -940,6 +940,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005846870}
   m_CullTransparentMesh: 1
+--- !u!1 &2022132285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2022132287}
+  - component: {fileID: 2022132286}
+  m_Layer: 0
+  m_Name: SceneManagement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2022132286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022132285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27e3456919a2d04885b6e19a7fb8ae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneManagement
+  transition: {fileID: 2052934869}
+  transitionTime: 1
+  cutsceneIndex: 5
+--- !u!4 &2022132287
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022132285}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.53361, y: 0.20133, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2052934866
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +1024,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 10.000014, y: 9.999992}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &2052934868
 CanvasGroup:
@@ -1063,7 +1110,7 @@ GameObject:
   - component: {fileID: 2104985396}
   - component: {fileID: 2104985395}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1134,3 +1181,4 @@ SceneRoots:
   - {fileID: 884336278}
   - {fileID: 1485396137}
   - {fileID: 500220679}
+  - {fileID: 2022132287}

@@ -5,9 +5,10 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
+    public Animator animator;
 
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        FindFirstObjectByType<DialogueManager>().StartDialogue(dialogue);
     }
 }
