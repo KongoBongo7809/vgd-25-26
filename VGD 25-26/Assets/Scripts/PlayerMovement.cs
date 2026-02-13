@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //Animation
         animator.SetBool("onGround", isGroundedLastFrame);
-        animator.SetBool("isRunning", (Mathf.Abs(horizontal) > 0.01));
+        animator.SetBool("isRunning", (Mathf.Abs(horizontal) > 0.01f));
 
         //Horizontal Movement
         horizontal = Input.GetAxisRaw("Horizontal");
