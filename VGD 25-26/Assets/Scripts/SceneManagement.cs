@@ -6,14 +6,15 @@ using UnityEngine.SceneManagement;
 public class SceneManagement : MonoBehaviour
 {
     public Animator transition;
-    public RGBManager rgb;
+    private RGBManager rgb;
 
     public float transitionTime = 1f;
     public int cutsceneIndex = 5;
 
     public void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
+        rgb = FindFirstObjectByType<RGBManager>();
     }
 
     public void LoadNextLevel()

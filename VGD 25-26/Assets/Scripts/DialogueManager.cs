@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
     public Text nameText;
-    public Text dialogueText;
+    public TextMeshProUGUI dialogueText;
 
     private Queue<string> sentences;
 
@@ -30,6 +31,8 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        Debug.Log(sentences.Count);
+
         if(sentences.Count == 0)
         {
             EndDialogue();
@@ -56,6 +59,6 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("End of conversation");
-        //FindObjectOfType<SceneManagement>().LoadNextLevel();
+        FindObjectOfType<SceneManagement>().LoadNextLevel();
     }
 }

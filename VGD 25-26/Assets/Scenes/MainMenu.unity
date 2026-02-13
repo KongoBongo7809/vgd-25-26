@@ -149,7 +149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneManagement
   transition: {fileID: 1160916844}
-  rgb: {fileID: 373606492}
   transitionTime: 1
   cutsceneIndex: 5
 --- !u!4 &268062454
@@ -245,6 +244,12 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: Text
+    clip: {fileID: 8300000, guid: c5de0f4f0b188564f9ee48609b3be8c1, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &373606491
 Transform:
@@ -1219,6 +1224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d3530169e128b40877d47b7e870390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
+  sceneManagement: {fileID: 0}
 --- !u!1 &2061874989
 GameObject:
   m_ObjectHideFlags: 0
