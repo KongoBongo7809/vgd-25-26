@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneManagement : MonoBehaviour
 {
     public Animator transition;
+    public RGBManager rgb;
 
     public float transitionTime = 1f;
     public int cutsceneIndex = 5;
@@ -18,6 +19,7 @@ public class SceneManagement : MonoBehaviour
     public void LoadNextLevel()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        rgb.CheckForRGB();
     }
 
     public void LoadCutscene()

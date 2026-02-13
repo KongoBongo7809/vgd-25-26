@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneManagement
   transition: {fileID: 1160916844}
+  rgb: {fileID: 373606492}
   transitionTime: 1
   cutsceneIndex: 5
 --- !u!4 &268062454
@@ -176,6 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 373606491}
   - component: {fileID: 373606490}
+  - component: {fileID: 373606492}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -259,6 +261,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &373606492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373606489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e709e6da46d31a942a01b679c7a7d69b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RGBManager
+  scenesWithRGB: 01000000
 --- !u!1 &569184077
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,15 +1011,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.10880196
+    x: 0.101990044
     y: 0
-    width: 0.78239614
-    height: 0.99999994
+    width: 0.7960199
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 3.59375
+  orthographic size: 3.53125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

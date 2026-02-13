@@ -15,27 +15,29 @@ public class RGBManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        vol = FindAnyObjectByType<Volume>();
+        vol = FindFirstObjectByType<Volume>();
         vol.profile.TryGet(out ca);
 
         for(int i = 0; i < scenesWithRGB.Length; i++)
         {
-            if(i == (SceneManager.GetActiveScene().buildIndex + 1))
+            if(scenesWithRGB[i] == (SceneManager.GetActiveScene().buildIndex))
             {
                 hasRGB = true;
             }
         }
+
+        CheckForRGB();
     }
 
-    void CheckForRGB()
+    public void CheckForRGB()
     {
-        /*if(hasRGB)
+        if(hasRGB)
         {
-            ca.intensity.value = 1f;
+            ca.active = true;
         }
         else
         {
-            ca.intensity.value = 0f;
-        }*/
+            ca.active = false;
+        }
     }
 }
