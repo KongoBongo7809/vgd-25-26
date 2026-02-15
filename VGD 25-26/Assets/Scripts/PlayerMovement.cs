@@ -17,14 +17,11 @@ public class PlayerMovement : MonoBehaviour
 
     bool isGroundedLastFrame = false;
 
-    // Update is called once per frame
     void Update()
     {
-        //Animation
         animator.SetBool("onGround", isGroundedLastFrame);
-        animator.SetBool("isRunning", (Mathf.Abs(horizontal) > 0.01f));
+        animator.SetBool("isRunning", (Mathf.Abs(horizontal) > 0.001f));
 
-        //Horizontal Movement
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         if(Input.GetButtonDown("Jump") && isGrounded())
@@ -33,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         }
         /*if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight*0.5f);
+            rb.velocity = new Vector2(rb.velocity.x, jumpHeight * 0.5f);
         }*/
         Flip();
         isGroundedLastFrame = isGrounded();
@@ -46,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.25f, groundLayer);
     }
 
     private void Flip()

@@ -217,7 +217,6 @@ RectTransform:
   - {fileID: 2143175511}
   - {fileID: 1448603075}
   - {fileID: 1551772135}
-  - {fileID: 461677258}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -886,81 +885,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447817492}
   m_CullTransparentMesh: 1
---- !u!1 &461677257
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 461677258}
-  - component: {fileID: 461677260}
-  - component: {fileID: 461677259}
-  m_Layer: 5
-  m_Name: Hybrid Mode Indicator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &461677258
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461677257}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5757.304}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 23717840}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120, y: 120}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &461677259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461677257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 66a5b8f8ad9b217448d3be06aae2041f, type: 3}
-  m_Type: 3
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 0
-  m_FillClockwise: 0
-  m_FillOrigin: 3
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &461677260
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461677257}
-  m_CullTransparentMesh: 1
 --- !u!1 &474588484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,7 +1017,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -8811733972543401060, guid: 1a57520e9f9fbe04b81f487c19df9f23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1443,10 +1367,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.07884362
+    x: -0.5
     y: 0
-    width: 0.84099865
-    height: 1.0004675
+    width: 1
+    height: 0
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -2529,17 +2453,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b8e1315cb356e48acc1f2de49fce8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorChange
-  redTag: Red
-  greenTag: Green
-  blueTag: Blue
+  redLayer: Red
+  greenLayer: Green
+  blueLayer: Blue
   volume: {fileID: 2049660285}
-  wheelTransform: {fileID: 1551772135}
-  hybridCooldownIndicator: {fileID: 461677259}
+  wheelVisual: {fileID: 1551772135}
   rotationSpeed: 360
-  colorBlendSpeed: 2
+  colorLerpSpeed: 1
   hybridDuration: 2
-  hybridCooldown: 4
-  hybridExitSpeed: 720
+  colorAdjustments: {fileID: 0}
 --- !u!114 &941349518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2709,11 +2631,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 15555219192264773, guid: fe5e13464d0244a32b630339069fd5de, type: 3}
       propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322669364187497460, guid: fe5e13464d0244a32b630339069fd5de, type: 3}
-      propertyPath: currentHealth
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2750793597580523545, guid: fe5e13464d0244a32b630339069fd5de, type: 3}
       propertyPath: m_Size.y
@@ -2729,7 +2647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229236866648328002, guid: fe5e13464d0244a32b630339069fd5de, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7229236866648328002, guid: fe5e13464d0244a32b630339069fd5de, type: 3}
       propertyPath: m_TagString
@@ -2777,11 +2695,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8339322738656380212, guid: fe5e13464d0244a32b630339069fd5de, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856627270250425581, guid: fe5e13464d0244a32b630339069fd5de, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4295,7 +4213,7 @@ GameObject:
   - component: {fileID: 1551772137}
   - component: {fileID: 1551772136}
   m_Layer: 5
-  m_Name: Color Wheel
+  m_Name: Glasses Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4320,7 +4238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1551772136
@@ -4343,9 +4261,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ae7f8ed77db079a4b848fdf435cdb8ea, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: ae7f8ed77db079a4b848fdf435cdb8ea, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4604,7 +4522,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1786927392}
   - component: {fileID: 1786927391}
-  - component: {fileID: 1786927393}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -4640,19 +4557,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1786927393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786927390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e709e6da46d31a942a01b679c7a7d69b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RGBManager
-  scenesWithRGB: 0000000001000000020000000300000004000000
 --- !u!1 &1800049759
 GameObject:
   m_ObjectHideFlags: 0
@@ -5483,10 +5387,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 607937491}
-  - {fileID: 1756323600}
-  - {fileID: 1333781244}
-  - {fileID: 1014830931}
   - {fileID: 941349516}
+  - {fileID: 1756323600}
   - {fileID: 23717840}
   - {fileID: 2049660286}
+  - {fileID: 1333781244}
   - {fileID: 1786927392}
+  - {fileID: 1014830931}
