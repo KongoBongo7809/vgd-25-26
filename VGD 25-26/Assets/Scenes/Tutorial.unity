@@ -946,7 +946,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &527846969
@@ -1195,15 +1195,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: -0.1380597
+    x: 0.12790698
     y: 0
-    width: 0.7960199
-    height: 0.95132744
+    width: 0.74418604
+    height: 0.99999994
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 4.171875
+  orthographic size: 3.78125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1462,6 +1462,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &852195617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 852195619}
+  - component: {fileID: 852195618}
+  m_Layer: 0
+  m_Name: RGBManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &852195618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852195617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e709e6da46d31a942a01b679c7a7d69b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RGBManager
+  hasRGB: 1
+--- !u!4 &852195619
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852195617}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.18633, y: -0.66158, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &879108324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,6 +1970,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 960
+  animator: {fileID: 0}
 --- !u!61 &941349513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2030,8 +2076,11 @@ MonoBehaviour:
   redLayer: Red
   greenLayer: Green
   blueLayer: Blue
-  vol: {fileID: 2049660285}
-  speed: 0.2
+  volume: {fileID: 0}
+  wheelVisual: {fileID: 0}
+  rotationSpeed: 360
+  colorLerpSpeed: 1
+  hybridDuration: 2
 --- !u!1 &1098505561
 GameObject:
   m_ObjectHideFlags: 0
@@ -3349,3 +3398,4 @@ SceneRoots:
   - {fileID: 2143175511}
   - {fileID: 2049660286}
   - {fileID: 1786927392}
+  - {fileID: 852195619}

@@ -73,7 +73,7 @@ public class PlayerCombat : MonoBehaviour
     {
         //Play an attack animation and attack audio
         animator.SetTrigger("isAttacking");
-        FindAnyObjectByType<AudioManager>().Play("Sword Clash");
+        FindAnyObjectByType<AudioManager>().Play("Attack");
 
         //Detect enemies in range of an attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);

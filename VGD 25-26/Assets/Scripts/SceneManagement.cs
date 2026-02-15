@@ -20,7 +20,12 @@ public class SceneManagement : MonoBehaviour
     public void LoadNextLevel()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
-        rgb.CheckForRGB();
+        //rgb.CheckSceneForRGB(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void LoadLevelWithIndex(int index)
+    {
+        StartCoroutine(LoadLevel(index));
     }
 
     public void LoadCutscene()

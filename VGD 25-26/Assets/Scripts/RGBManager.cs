@@ -9,35 +9,39 @@ public class RGBManager : MonoBehaviour
 {
     private Volume vol;
     private ColorAdjustments ca;
-    public int[] scenesWithRGB;
-    private bool hasRGB = false;
+    //public int[] scenesWithRGB;
+    public bool hasRGB = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         vol = FindFirstObjectByType<Volume>();
         vol.profile.TryGet(out ca);
+        CheckSceneForRGB();
+    }
 
-        for(int i = 0; i < scenesWithRGB.Length; i++)
+    public void CheckSceneForRGB()
+    {
+        //if (targetIndex == null) targetIndex = 0;
+        /*for(int i = 0; i < scenesWithRGB.Length; i++)
         {
-            if(scenesWithRGB[i] == (SceneManager.GetActiveScene().buildIndex))
+            Debug.Log("index: " + i + ", value: " + scenesWithRGB[i] + ", scene: " + SceneManager.GetActiveScene().buildIndex + ", target: " + targetIndex);
+
+            if(scenesWithRGB[i] == targetIndex)
             {
                 hasRGB = true;
             }
-        }
+        }*/
 
-        CheckForRGB();
-    }
-
-    public void CheckForRGB()
-    {
         if(hasRGB)
         {
             ca.active = true;
+            Debug.Log("activated");
         }
         else
         {
             ca.active = false;
+            Debug.Log("deactivated");
         }
     }
 }

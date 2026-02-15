@@ -176,7 +176,6 @@ GameObject:
   m_Component:
   - component: {fileID: 373606491}
   - component: {fileID: 373606490}
-  - component: {fileID: 373606492}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -228,7 +227,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Run
-    clip: {fileID: 8300000, guid: d3a5a3d7fce4911498c50e5cc58d0330, type: 3}
+    clip: {fileID: 8300000, guid: bd23f26819bcd1f4c81c27f1c8d4630f, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -241,7 +240,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Level Music
     clip: {fileID: 8300000, guid: a04b6d695f05ab04e8582a75da438bc5, type: 3}
-    volume: 1
+    volume: 0.05
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -266,19 +265,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &373606492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 373606489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e709e6da46d31a942a01b679c7a7d69b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RGBManager
-  scenesWithRGB: 01000000
 --- !u!1 &569184077
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +472,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653721054}
   m_CullTransparentMesh: 1
+--- !u!1 &876547603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 876547605}
+  - component: {fileID: 876547604}
+  m_Layer: 0
+  m_Name: RGBManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &876547604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876547603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e709e6da46d31a942a01b679c7a7d69b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RGBManager
+  hasRGB: 0
+--- !u!4 &876547605
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876547603}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.18633, y: -0.66158, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &886907469
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,3 +1474,4 @@ SceneRoots:
   - {fileID: 1645146966}
   - {fileID: 373606491}
   - {fileID: 268062454}
+  - {fileID: 876547605}

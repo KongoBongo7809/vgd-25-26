@@ -34,6 +34,9 @@ public class PlayerMovement : MonoBehaviour
         }*/
         Flip();
         isGroundedLastFrame = isGrounded();
+
+        if((Mathf.Abs(horizontal) < 0.1f) && isGrounded()) FindAnyObjectByType<AudioManager>().Play("Run");
+        //else FindAnyObjectByType<AudioManager>().Stop("Player Hurt");
     }
 
     private void FixedUpdate()
