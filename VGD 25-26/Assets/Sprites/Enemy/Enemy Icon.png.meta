@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: ac6d20e96cede28469e22e3423f8a377
+guid: 561eb47d880361247975ff6c4e7801c8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5705224731760984177
-    second: pixil-frame-0 (34)_0
-  - first:
-      213: -5792328293699481527
-    second: pixil-frame-0 (34)_1
-  - first:
-      213: 3048048956127312240
-    second: pixil-frame-0 (34)_2
-  - first:
-      213: -8314842622891979727
-    second: pixil-frame-0 (34)_3
+      213: 317888283918667167
+    second: Pixilart selection (11)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -122,89 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy-idle-1
+      name: Pixilart selection (11)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 56
-        height: 48
+        width: 20
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 170036c7aa70d2f40800000000000000
-      internalID: 5705224731760984177
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy-idle-2
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 0
-        width: 56
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 940199f1b148d9fa0800000000000000
-      internalID: -5792328293699481527
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy-idle-3
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 0
-        width: 56
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 079f7f75068dc4a20800000000000000
-      internalID: 3048048956127312240
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy-idle-4
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 0
-        width: 56
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 13c0f3b30bebb9c80800000000000000
-      internalID: -8314842622891979727
+      spriteID: f9d0b31c5bd596400800000000000000
+      internalID: 317888283918667167
       vertices: []
       indices: 
       edges: []
@@ -213,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4deb388a94b143c49b5ca57410e9a877
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      enemy-idle-1: 5705224731760984177
-      enemy-idle-2: -5792328293699481527
-      enemy-idle-3: 3048048956127312240
-      enemy-idle-4: -8314842622891979727
+      Pixilart selection (11)_0: 317888283918667167
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

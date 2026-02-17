@@ -113,6 +113,7 @@ public class PlayerCombat : MonoBehaviour
         if ((int)currentHealth <= 0)
         {
             Die();
+            RestartLevel();
         }
     }
 
