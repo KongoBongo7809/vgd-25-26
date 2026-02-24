@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Tilemaps;
 
 public class ColorWheelController : MonoBehaviour
 {
@@ -42,8 +43,8 @@ public class ColorWheelController : MonoBehaviour
     private float colorT;
     private Color colorFrom;
     private Color colorTo;
-    private const float FULL_STEP = -120f;
-    private const float HALF_STEP = -60f;
+    private float FULL_STEP => 360f / palette.Length;
+    private float HALF_STEP => 180f / palette.Length;
 
     void Start()
     {
@@ -51,6 +52,7 @@ public class ColorWheelController : MonoBehaviour
         if (volume != null) volume.profile.TryGet(out colorAdjustments);
         currentAngle = baseIndex * FULL_STEP;
         targetAngle = currentAngle;
+        hybridTimer = hybridDuration;
         indicatorAngle = 0f;
         ApplySingle(baseIndex);
     }
@@ -187,7 +189,7 @@ public class ColorWheelController : MonoBehaviour
         float multiplier = 1f + Mathf.Clamp(dist / 180f, 0f, 3f);
         float step = rotationSpeed * multiplier * Time.deltaTime;
         currentAngle = Mathf.MoveTowards(currentAngle, targetAngle, step);
-        if (wheelTransform != null) wheelTransform.rotation = Quaternion.Euler(0f, 0f, currentAngle);
+        if (wheelTransform != null) wheelTransform.rotation = Quaternion.Euler(0f, 0f, -currentAngle);
     }
 
     void UpdateIndicator()
@@ -209,15 +211,16 @@ public class ColorWheelController : MonoBehaviour
         var objs = GameObject.FindGameObjectsWithTag(tag);
         foreach (var o in objs)
         {
-            var sr = o.GetComponent<SpriteRenderer>();
+            var sr = o.GetComponent<Tilemap>();
             if (sr != null)
             {
                 Color c = sr.color;
                 c.a = on ? 1f : 0.25f;
                 sr.color = c;
             }
-            var bc = o.GetComponent<BoxCollider2D>();
+            var bc = o.GetComponent<Collider2D>();
             if (bc != null) bc.enabled = on;
-        }
+        } 
+        if(on) PlayerManager.instance.player.GetComponent<PlayerCombat>().canAttackEnemies((tag == greenTag) ? true : false);
     }
 }

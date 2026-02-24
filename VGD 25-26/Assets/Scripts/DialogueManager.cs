@@ -8,10 +8,10 @@ public class DialogueManager : MonoBehaviour
 {
     public Text nameText;
     public TextMeshProUGUI dialogueText;
+    [SerializeField] private float typingSpeed = 0.05f;
 
     private Queue<string> sentences;
 
-    // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
@@ -33,7 +33,7 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log(sentences.Count);
 
-        if(sentences.Count == 0)
+        if (sentences.Count == 0)
         {
             EndDialogue();
             return;
@@ -42,23 +42,27 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-        FindObjectOfType<AudioManager>().Play("Text");
     }
 
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
-        foreach(char letter in sentence.ToCharArray())
+        AudioManager audio = FindAnyObjectByType<AudioManager>();
+        audio.Play("Text");
+        foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return null;
+            float delay = ".,:;?!".IndexOf(letter) >= 0 
+                          ? typingSpeed * 8f 
+                          : typingSpeed;
+            yield return new WaitForSeconds(delay);
         }
+        audio.Stop("Text");
     }
-
 
     void EndDialogue()
     {
         Debug.Log("End of conversation");
-        FindObjectOfType<SceneManagement>().LoadNextLevel();
+        FindAnyObjectByType<SceneManagement>().LoadNextLevel();
     }
 }

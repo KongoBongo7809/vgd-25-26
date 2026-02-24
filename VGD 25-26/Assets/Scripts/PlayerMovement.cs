@@ -28,10 +28,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
         }
-        /*if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight * 0.5f);
-        }*/
         Flip();
         isGroundedLastFrame = isGrounded();
 

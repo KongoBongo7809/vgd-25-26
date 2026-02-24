@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
+        PlayerPrefs.SetInt("levelsUnlocked", 0);
+        Debug.Log("levels unlocked set to 0");
         sceneManagement.LoadNextLevel();
     }
 }

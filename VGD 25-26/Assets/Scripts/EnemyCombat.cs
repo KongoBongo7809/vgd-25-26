@@ -25,9 +25,6 @@ public class EnemyCombat : MonoBehaviour
     public float attackRate = 1f;
     float nextAttackTime;
 
-    //Extra
-    bool playerInRangeLastFrame = false;
-
     void Start()
     {
         currentHealth = maxHealth;
@@ -56,6 +53,7 @@ public class EnemyCombat : MonoBehaviour
             if (playerInRange())
             {
                 animator.SetTrigger("Attack");
+                FindFirstObjectByType<AudioManager>().Play("Enemy Attack");
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }
@@ -83,7 +81,6 @@ public class EnemyCombat : MonoBehaviour
 
         //Play hurt animation
         //animator.SetTrigger("Hurt");
-        //FindObjectOfType<AudioManager>().Play("Enemy Hurt");
 
         if (currentHealth <= 0)
         {
@@ -95,47 +92,9 @@ public class EnemyCombat : MonoBehaviour
     {
         ParticleSystem currentDeathEffect = Instantiate(deathEffect, transform.position, transform.rotation);
         currentDeathEffect.Play();
+        FindFirstObjectByType<AudioManager>().Play("Hurt");
         Destroy(this.gameObject);
     }
-
-/*private void Update()
-    {
-        if (Time.time >= nextAttackTime)
-        {
-            if (playerInRange())
-            {
-                Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
-            }
-        }
-
-        //Player in range audio
-        AudioManager audioManager = FindObjectOfType<AudioManager>();
-        if (playerInRange() && !playerInRangeLastFrame)
-        {
-            audioManager.Play("Enemy Growl");
-        }
-        playerInRangeLastFrame = playerInRange();
-    }
-
-    bool playerInRange()
-    {
-        return Physics2D.OverlapCircle(attackPoint.position, attackRange, playerLayer);
-    }
-
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-
-        //Play hurt animation
-        animator.SetTrigger("Hurt");
-        FindObjectOfType<AudioManager>().Play("Enemy Hurt");
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }*/
 }
 
     

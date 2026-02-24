@@ -33,6 +33,12 @@ public class SceneManagement : MonoBehaviour
         StartCoroutine(LoadLevel(cutsceneIndex));
     }
 
+    public void LoadMap()
+    {
+        FindFirstObjectByType<AudioManager>().Play("Lock");
+        StartCoroutine(LoadLevel(2));
+    }
+
     IEnumerator LoadLevel(int index)
     {
         transition.SetTrigger("Start");

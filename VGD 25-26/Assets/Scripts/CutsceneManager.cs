@@ -6,7 +6,7 @@ public class CutsceneManager : MonoBehaviour
 
     void Start()
     {
-        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        AudioManager audioManager = FindFirstObjectByType<AudioManager>();
         audioManager.Stop("Home Music");
         audioManager.Play("Level Music");
         trigger.TriggerDialogue();

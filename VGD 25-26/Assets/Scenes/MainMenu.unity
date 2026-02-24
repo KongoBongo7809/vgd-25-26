@@ -240,12 +240,24 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Level Music
     clip: {fileID: 8300000, guid: a04b6d695f05ab04e8582a75da438bc5, type: 3}
-    volume: 0.05
+    volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Text
     clip: {fileID: 8300000, guid: c5de0f4f0b188564f9ee48609b3be8c1, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Enemy Attack
+    clip: {fileID: 8300000, guid: 31ba30ad695bb0f4f865bef228d0eedf, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Hurt
+    clip: {fileID: 8300000, guid: a484b41e076b543488aab1854a8d1215, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
@@ -347,9 +359,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 268062453}
-        m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
-        m_MethodName: LoadNextLevel
+      - m_Target: {fileID: 2050703868}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1047,10 +1059,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.12790698
+    x: 0
     y: 0
     width: 0.74418604
-    height: 0.99999994
+    height: 0.9917355
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -1255,7 +1267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d3530169e128b40877d47b7e870390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
-  sceneManagement: {fileID: 0}
+  sceneManagement: {fileID: 268062453}
 --- !u!1 &2061874989
 GameObject:
   m_ObjectHideFlags: 0

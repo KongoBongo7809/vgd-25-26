@@ -18,6 +18,7 @@ public class PlayerCombat : MonoBehaviour
 
     public float attackRate = 2f;
     float nextAttackTime;
+    bool canAttack = true;
 
     [Header("Health")]
     public int maxHealth = 100;
@@ -83,7 +84,7 @@ public class PlayerCombat : MonoBehaviour
         {
             if (enemy.GetComponent<EnemyCombat>() != null)
             {
-                enemy.GetComponent<EnemyCombat>().TakeDamage(attackDamage);
+                enemy.GetComponent<EnemyCombat>().TakeDamage(attackDamage * ((canAttack == true) ? 1 : 0));
                 hitEffectsAnimator.SetTrigger("isHitting");
             } else
             {
@@ -97,7 +98,7 @@ public class PlayerCombat : MonoBehaviour
         currentHealth -= damage;
         healthBar.SetHealth((int)currentHealth);
         animator.SetTrigger("isHurt");
-        FindObjectOfType<AudioManager>().Play("Player Hurt");
+        FindFirstObjectByType<AudioManager>().Play("Player Hurt");
         if ((int)currentHealth <= 0)
         {
             Die();
@@ -137,5 +138,10 @@ public class PlayerCombat : MonoBehaviour
     private void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void canAttackEnemies(bool b)
+    {
+        canAttack = b;
     }
 }
