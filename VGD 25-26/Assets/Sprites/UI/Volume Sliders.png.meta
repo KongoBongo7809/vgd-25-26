@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 79633e2147457df48844beb381a15dea
+guid: e9fe2b71d8adc9449858288056cf9659
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 605480318180631637
-    second: Pixilart selection (1)_0
+      213: -7850100633523820876
+    second: Volume Sliders_0
+  - first:
+      213: -3671918959143107595
+    second: Volume Sliders_1
+  - first:
+      213: -3781016158201472585
+    second: Volume Sliders_2
+  - first:
+      213: 5497334843649891387
+    second: Volume Sliders_3
+  - first:
+      213: -2882540315389166518
+    second: Volume Sliders_4
+  - first:
+      213: 1402503139677907031
+    second: Volume Sliders_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +61,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,40 +111,49 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pixilart selection (1)_0
+      name: Music
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 83
-        height: 13
+        width: 51
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 554a5a33429176800800000000000000
-      internalID: 605480318180631637
+      spriteID: 4b66ebfb017de0390800000000000000
+      internalID: -7850100633523820876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SFX
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 51
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3c11270ae47a4c40800000000000000
+      internalID: 5497334843649891387
       vertices: []
       indices: 
       edges: []
@@ -138,7 +162,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: e7f92487d66d6b5469bf71fa17664797
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +172,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pixilart selection (1)_0: 605480318180631637
+      Music: -7850100633523820876
+      SFX: 5497334843649891387
+      Volume Sliders_1: -3671918959143107595
+      Volume Sliders_2: -3781016158201472585
+      Volume Sliders_4: -2882540315389166518
+      Volume Sliders_5: 1402503139677907031
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

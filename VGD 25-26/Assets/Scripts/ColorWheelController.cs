@@ -158,12 +158,14 @@ public class ColorWheelController : MonoBehaviour
     void ApplySingle(int index)
     {
         for (int i = 0; i < tags.Length; i++) ToggleTag(tags[i], i == index);
+        PlayerManager.instance.player.GetComponent<PlayerCombat>().canAttackEnemies(tags[index] == greenTag);
         StartColorTransition(palette[index]);
     }
 
     void ApplyHybrid(int a, int b)
     {
         for (int i = 0; i < tags.Length; i++) ToggleTag(tags[i], i == a || i == b);
+        PlayerManager.instance.player.GetComponent<PlayerCombat>().canAttackEnemies(tags[a] == greenTag || tags[b] == greenTag);
         StartColorTransition((palette[a] + palette[b]) * 0.5f);
     }
 
@@ -220,7 +222,6 @@ public class ColorWheelController : MonoBehaviour
             }
             var bc = o.GetComponent<Collider2D>();
             if (bc != null) bc.enabled = on;
-        } 
-        if(on) PlayerManager.instance.player.GetComponent<PlayerCombat>().canAttackEnemies((tag == greenTag) ? true : false);
+        }
     }
 }

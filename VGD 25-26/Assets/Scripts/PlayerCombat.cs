@@ -84,8 +84,8 @@ public class PlayerCombat : MonoBehaviour
         {
             if (enemy.GetComponent<EnemyCombat>() != null)
             {
-                enemy.GetComponent<EnemyCombat>().TakeDamage(attackDamage * ((canAttack == true) ? 1 : 0));
-                hitEffectsAnimator.SetTrigger("isHitting");
+                enemy.GetComponent<EnemyCombat>().TakeDamage(attackDamage * ((canAttack) ? 1 : 0));
+                if (canAttack) hitEffectsAnimator.SetTrigger("isHitting");
             } else
             {
                 //enemy.GetComponent<BossCombat>().TakeDamage(attackDamage);

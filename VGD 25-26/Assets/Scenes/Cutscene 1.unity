@@ -758,7 +758,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -906,7 +906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 107.64818}
+  m_AnchoredPosition: {x: 0, y: 107.64819}
   m_SizeDelta: {x: 34.380005, y: -200.26999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1258002943
@@ -1142,7 +1142,7 @@ GameObject:
   - component: {fileID: 1423936640}
   - component: {fileID: 1423936639}
   m_Layer: 5
-  m_Name: Scene Background
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1157,7 +1157,7 @@ RectTransform:
   m_GameObject: {fileID: 1423936637}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9588014, y: 0.9588014, z: 0.9588014}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 52979073}
@@ -1165,7 +1165,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 34.380005, y: -200.26999}
+  m_SizeDelta: {x: 0, y: -200}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1423936639
 MonoBehaviour:
@@ -1583,7 +1583,7 @@ MonoBehaviour:
       envy, he kidnapped the princess and took her to his Dojo to absorb the color
       for himself.
     - "Nevertheless, the empress\u2019s most valiant ninja, Roy G Biv, sought to
-      save her by travelling through the city to reach Sensei Gray\u2019s Dojo in
+      save her by traveling through the city to reach Sensei Gray\u2019s Dojo in
       the forest."
   animator: {fileID: 0}
 --- !u!1 &1913403843
@@ -1598,7 +1598,7 @@ GameObject:
   - component: {fileID: 1913403846}
   - component: {fileID: 1913403845}
   m_Layer: 5
-  m_Name: Princess House
+  m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1675,7 +1675,7 @@ GameObject:
   - component: {fileID: 1949552330}
   - component: {fileID: 1949552329}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1784,15 +1784,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: -0.12906976
-    y: 0
-    width: 0.74418604
-    height: 0.8884297
+    x: 0.16307206
+    y: 0.00093457947
+    width: 0.67332983
+    height: 0.99813086
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 3.78125
+  orthographic size: 4.171875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1880,7 +1880,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 401bc3c3fb1a7534f9f0ccf1af0c4548, type: 3}
+  m_Sprite: {fileID: -8811733972543401060, guid: 1a57520e9f9fbe04b81f487c19df9f23, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2097,7 +2097,7 @@ GameObject:
   - component: {fileID: 2051927799}
   - component: {fileID: 2051927798}
   m_Layer: 5
-  m_Name: shortcut
+  m_Name: Shortcut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

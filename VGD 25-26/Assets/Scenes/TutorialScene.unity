@@ -600,7 +600,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8234602363075410864, guid: ae761f24d9b7e5a42b628fc21afa5150, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae761f24d9b7e5a42b628fc21afa5150, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20670,15 +20670,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.12790698
-    y: 0
-    width: 0.74418604
-    height: 0.99999994
+    x: 0.16307206
+    y: 0.00093457947
+    width: 0.67332983
+    height: 0.99813086
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 3.78125
+  orthographic size: 4.171875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -22838,7 +22838,7 @@ MonoBehaviour:
     by a button found in Red mode.
   - You might notice a portal is located on top of a Green platform. Use Shift+Q
     or Shift+E to use multiple colors at once! Careful, the effect only lasts 2 seconds
-    and has a cooldown of 3 seconds.
+    and has a cooldown of 4 seconds.
   - Incredible work! Use your skills to get to the end.
   tutorialOverlay: {fileID: 747951675}
   tutorialText: {fileID: 2028226750}
@@ -24984,7 +24984,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4504304133113465731, guid: 081949c9eeb39f343abcdb979ef0c553, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 081949c9eeb39f343abcdb979ef0c553, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

@@ -7,6 +7,8 @@ public class AudioManager : MonoBehaviour
 	public static AudioManager instance;
 
 	public Sound[] sounds;
+	public float music = 1f;
+	public float sfx = 1f;
 
 	void Awake()
 	{
@@ -42,7 +44,7 @@ public class AudioManager : MonoBehaviour
 			return;
 		}
 
-		s.source.volume = s.volume;
+		s.source.volume = s.volume * (s.tag == "Music" ? music : s.tag == "SFX" ? sfx : 1f);
 		s.source.pitch = s.pitch;
 
 		s.source.Play();

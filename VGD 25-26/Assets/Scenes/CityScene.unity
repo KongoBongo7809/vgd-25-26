@@ -978,7 +978,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8234602363075410864, guid: ae761f24d9b7e5a42b628fc21afa5150, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae761f24d9b7e5a42b628fc21afa5150, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -27651,15 +27651,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: -0.12906976
+    x: 0.052077852
     y: 0
-    width: 0.74418604
-    height: 0.8884297
+    width: 0.33666492
+    height: 0.7648434
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 3.78125
+  orthographic size: 4.171875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -33096,10 +33096,6 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 8c1f42008a571904caa50b5da7b2b0b2, type: 3}
   - m_RefCount: 27
     m_Data: {fileID: 21300000, guid: 8fbfcbb4400c85b44b98c87c788976b6, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 64
     m_Data:
@@ -34233,7 +34229,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4504304133113465731, guid: 081949c9eeb39f343abcdb979ef0c553, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 081949c9eeb39f343abcdb979ef0c553, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
