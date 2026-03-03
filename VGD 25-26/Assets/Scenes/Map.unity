@@ -336,10 +336,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: -0.12906976
+    x: -0.121179044
     y: 0
-    width: 0.74418604
-    height: 0.8884297
+    width: 0.69868994
+    height: 0.83495146
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -593,7 +593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1089310179
 RectTransform:
   m_ObjectHideFlags: 0
@@ -743,7 +743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1118883108
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1155,7 +1155,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1893977377}
   m_OnClick:
     m_PersistentCalls:
@@ -1289,7 +1289,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 2005846873}
   m_OnClick:
     m_PersistentCalls:
@@ -1559,7 +1559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1959287876745339548, guid: 15fa60c3c375e9b488a7e9786933ca55, type: 3}
+  m_Sprite: {fileID: -8273445311213168830, guid: a80f79e6165acc24e9701ebb8a4e7d98, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CityScene.unity
     guid: 112aaf4fd4c29dc4eaf41dc286a8ac02
+  - enabled: 1
+    path: Assets/Scenes/DojoScene.unity
+    guid: 85f13b20d908c3d4db8a59b49c74ff0c
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

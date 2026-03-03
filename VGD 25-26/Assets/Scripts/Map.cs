@@ -21,6 +21,7 @@ public class Map : MonoBehaviour
                 UnlockLevel(cityButton, cityLockBackground, cityLockIcon);
                 break;
             case 2:
+                UnlockLevel(cityButton, cityLockBackground, cityLockIcon);
                 UnlockLevel(dojoButton, dojoLockBackground, dojoLockIcon);
                 break;
             default:

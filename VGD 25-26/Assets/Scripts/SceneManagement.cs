@@ -43,6 +43,12 @@ public class SceneManagement : MonoBehaviour
     {
         transition.SetTrigger("Start");
 
+        Sound[] allSounds = FindAnyObjectByType<AudioManager>().sounds;
+        foreach(Sound s in allSounds)
+        {
+            if(s.tag == "SFX") FindAnyObjectByType<AudioManager>().Stop(s.name);
+        }
+
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(index);
