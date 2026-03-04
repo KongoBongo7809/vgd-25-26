@@ -16,4 +16,14 @@ public class SmoothCamera : MonoBehaviour
         Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothSpeed);
         transform.position = smoothedPosition;
     }
+
+    public void SetTarget(Transform t)
+    {
+        target = t;
+    }
+
+    public void SetOffset(Vector3 o)
+    {
+        offset = o;
+    }
 }

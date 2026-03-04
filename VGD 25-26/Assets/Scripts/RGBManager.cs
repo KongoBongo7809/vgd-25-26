@@ -36,12 +36,10 @@ public class RGBManager : MonoBehaviour
         if(hasRGB)
         {
             ca.active = true;
-            Debug.Log("activated");
         }
         else
         {
             ca.active = false;
-            Debug.Log("deactivated");
         }
     }
 }
